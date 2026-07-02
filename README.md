@@ -1,4 +1,4 @@
-# hypr-lua-utils
+# Hypr Lua Utils
 
 Utility functions for Hyprland Lua configs.
 Window class generation, app spawning/focusing, scratchpads, and webapp helpers.
@@ -57,8 +57,15 @@ hl.bind("SUPER + M", scratchpad("music", webapp_cmd("open.spotify.com"), webapp_
 
 ## Useful Tips
 
-Add gaps to every special woskpace to simulate traditional scratchpads.
+- Add gaps to every special woskpace to simulate traditional scratchpads.
 
 ```lua
 hl.workspace_rule({ workspace = "s[true]", gaps_out = 50 })
+```
+
+- You can assign local tables to simplify function calls.
+
+```lua
+local browser = { cmd = "brave", class = "brave-browser" }
+hl.bind("SUPER + B", spawn_or_focus(browser))
 ```
