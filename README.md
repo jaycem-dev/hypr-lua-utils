@@ -1,7 +1,9 @@
 # Hypr Lua Utils
 
 Utility functions for Hyprland Lua configs.
-Window class generation, app spawning/focusing, scratchpads, and webapp helpers.
+
+- Spawn or focus functions for apps, webapps, TUIs and Chromium tabs.
+- Traditional scratchpad workflow, where it toggles the special workspace and it runs the assigned app if it's not running.
 
 By default, it uses Brave and Kitty for the WebApp and TUI commands. You can override them in the lua file.
 
@@ -9,11 +11,20 @@ By default, it uses Brave and Kitty for the WebApp and TUI commands. You can ove
 
 Main:
 
-- `spawn_or_focus({ cmd: string, class: string | nil })` — spawn or focus an app if it's already running
-- `spawn_or_focus_webapp(url: string)` — spawn or focus a webapp by URL
-- `spawn_or_focus_url(url: string)` — open or focus an existing tab of the given URL
-- `spawn_or_focus_tui({ cmd: string, class: string | nil })` — spawn or focus a terminal TUI app via kitty
-- `scratchpad(scratchpad_name: string, cmd: string, class: string | nil)` — Toggle a named scratchpad with an assigned app with inline rules.
+- `spawn_or_focus({ cmd: string, class: string | nil })`
+  spawn or focus an app by id if it's already running
+
+- `spawn_or_focus_webapp(url: string)`
+  spawn or focus a webapp by URL
+
+- `spawn_or_focus_url(url: string)`
+  open or focus an existing tab of the given URL
+
+- `spawn_or_focus_tui({ cmd: string, class: string | nil })`
+  spawn or focus a terminal TUI app via kitty
+
+- `scratchpad(scratchpad_name: string, cmd: string, class: string | nil)`
+  Toggle a named scratchpad with an assigned app with inline rules
 
 Helpers:
 
